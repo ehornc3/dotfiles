@@ -1,5 +1,6 @@
 # unlink before installing deps
-stow -D .
+stow -Dv .
+
 # get neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
@@ -19,7 +20,6 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.
 # nv-chad
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
-git clone https://github.com/NvChad/starter ~/.config/nvim
 
 # link dotfiles
-stow .
+stow -v .
