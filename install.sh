@@ -18,6 +18,7 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.
 
 # nv-chad
 rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
 git clone https://github.com/NvChad/starter ~/.config/nvim
 
 # link dotfiles
