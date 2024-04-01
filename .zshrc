@@ -96,3 +96,5 @@ alias vim=nvim
 alias vi=nvim
 
 alias rd='rm -r'
+
+export PATH="$PATH:/opt/nvim-linux64/bin"
