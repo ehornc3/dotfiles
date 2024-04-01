@@ -67,10 +67,9 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 
 # needs to be declared before plugins are loaded
-ZOXIDE_CMD_OVERRIDE='cd'
 HISTFILE=~/.zsh_history
 
-plugins=(git zoxide zsh-autocomplete)
+plugins=(git zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,4 +97,4 @@ alias vi=nvim
 
 alias rd='rm -r'
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
+eval "$(zoxide init zsh --cmd cd)"
