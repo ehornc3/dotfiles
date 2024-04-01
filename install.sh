@@ -13,7 +13,7 @@ sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/ins
 rm -rf ~/.zshrc
 
 # oh-my-zsh plugins
-
+rm -rf ~/.omz-custom
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.omz-custom/plugins/zsh-autocomplete
 
 # nv-chad
