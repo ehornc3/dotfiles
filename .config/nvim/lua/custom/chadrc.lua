@@ -13,12 +13,22 @@ M.ui = {
 
   lsp_semantic_tokens = true, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 
+  tabufline = {
+    show_numbers = false,
+    enabled = true,
+    lazyload = true,
+    btns = false
+  },
+
   statusline = {
     theme = "minimal", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
     separator_style = "arrow",
-    overriden_modules = nil,
+    overriden_modules = function(modules)
+      modules.buttons = nil
+    end
+    ,
   },
 
   nvdash = {

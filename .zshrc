@@ -99,3 +99,5 @@ alias open=xdg-open
 alias rd='rm -r'
 
 eval "$(zoxide init zsh --cmd cd)"
+
+alias gdb="gdb -q -tui"

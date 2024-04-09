@@ -1,0 +1,4 @@
+set debuginfod enabled off
+
+set print array on
+set print pretty on

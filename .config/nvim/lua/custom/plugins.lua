@@ -60,7 +60,7 @@ local plugins = {
       "KittyNavigateDown",
       "KittyNavigateUp",
     }
-  }
+  },
 }
 
 return plugins
