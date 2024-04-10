@@ -1,34 +1,47 @@
----@type ChadrcConfig
 local M = {}
 
--- Path to overriding theme and highlights files
-local highlights = require "custom.highlights"
-
 M.ui = {
-  theme = "catppuccin",
-  theme_toggle = { "catppuccin", "nord" },
-
-  hl_override = highlights.override,
-  hl_add = highlights.add,
-
-  lsp_semantic_tokens = true, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
-
-  tabufline = {
-    show_numbers = false,
-    enabled = true,
-    lazyload = true,
-    btns = false
+  ------------------------------- base46 -------------------------------------
+  -- hl = highlights
+  hl_add = {
+    NvimTreeOpenedFolderName = { fg = "green", bold = true },
   },
 
+  hl_override = {
+    Comment = {
+      italic = true,
+    },
+  },
+
+  changed_themes = {},
+  theme_toggle = { "catppuccin", "one_light" },
+  theme = "catppuccin",
+  transparency = false,
+
+  cmp = {
+    icons = true,
+    lspkind_text = true,
+    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+  },
+
+  telescope = { style = "bordered" }, -- borderless / bordered
+
+  ------------------------------- nvchad_ui modules -----------------------------
   statusline = {
     theme = "minimal", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
-    separator_style = "arrow",
-    overriden_modules = function(modules)
-      modules.buttons = nil
-    end
-    ,
+    separator_style = "default",
+    order = nil,
+    modules = nil,
+  },
+
+  -- lazyload it when there are 1+ buffers
+  tabufline = {
+    enabled = true,
+    lazyload = true,
+    order = { "treeOffset", "buffers", "tabs", "btns" },
+    modules = nil,
   },
 
   nvdash = {
@@ -54,14 +67,15 @@ M.ui = {
     },
   },
 
-  telescope = {
-    style = "bordered"
-  }
+  cheatsheet = { theme = "grid" }, -- simple/grid
+
+  lsp = { signature = true },
 }
 
-M.plugins = "custom.plugins"
+M.base46 = {
+  integrations = {},
+}
 
--- check core.mappings for table structure
-M.mappings = require "custom.mappings"
+M.mappings = require "mappings"
 
 return M
