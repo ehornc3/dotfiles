@@ -1,2 +1,2 @@
-*.bak
 .config/nvim/lazy-lock.json
+.config/kitty/kitty.conf.bak

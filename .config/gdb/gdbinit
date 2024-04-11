@@ -2,3 +2,15 @@ set debuginfod enabled off
 
 set print array on
 set print pretty on
+
+define hook-next
+  refresh
+end
+
+define hook-continue
+  refresh
+end
+
+define hook-step
+  refresh
+end
