@@ -14,8 +14,8 @@ M.ui = {
   },
 
   changed_themes = {},
-  theme_toggle = { "catppuccin", "one_light" },
-  theme = "catppuccin",
+  theme_toggle = { "gatekeeper", "one_light" },
+  theme = "gatekeeper",
   transparency = false,
 
   cmp = {
@@ -40,7 +40,7 @@ M.ui = {
   tabufline = {
     enabled = true,
     lazyload = true,
-    order = { "treeOffset", "buffers", "tabs", "btns" },
+    order = { "treeOffset", "buffers", "tabs" },
     modules = nil,
   },
 

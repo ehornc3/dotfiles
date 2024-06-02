@@ -10,22 +10,27 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = require "configs.mason"
+    opts = require "configs.mason",
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = require "configs.treesitter"
+    opts = require "configs.treesitter",
   },
 
   {
     "nvim-tree/nvim-tree.lua",
-    opts = require "configs.nvimtree" 
+    opts = require "configs.nvimtree",
   },
 
   {
     "NvChad/nvterm",
     enabled = false,
+  },
+
+  {
+    "folke/which-key.nvim",
+    opts = require "configs.whichkey",
   },
 
   {
@@ -41,7 +46,7 @@ return {
     cmd = { "UndotreeToggle" },
     config = function()
       require "configs.undotree"
-    end
+    end,
   },
 
   {
@@ -56,6 +61,6 @@ return {
       "KittyNavigateRight",
       "KittyNavigateDown",
       "KittyNavigateUp",
-    }
+    },
   },
 }
