@@ -3,7 +3,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "tsserver", "rust_analyzer", "volar", "prismals" }
+local servers = { "html", "cssls", "ts_ls", "rust_analyzer", "volar", "prismals" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -21,4 +21,19 @@ lspconfig.clangd.setup {
     "clangd",
     "--offset-encoding=utf-16",
   },
+}
+
+lspconfig.pylsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  on_init = on_init,
+  settings = {
+    pylsp = {
+      plugins = {
+        flake8 = {
+          enabled = true,
+        }
+      }
+    }
+  }
 }

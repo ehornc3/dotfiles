@@ -14,8 +14,8 @@ M.ui = {
   },
 
   changed_themes = {},
-  theme_toggle = { "gatekeeper", "one_light" },
-  theme = "gatekeeper",
+  theme_toggle = { "pastelDark", "one_light" },
+  theme = "pastelDark",
   transparency = false,
 
   cmp = {

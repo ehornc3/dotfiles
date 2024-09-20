@@ -20,3 +20,5 @@ map("n", "<C-h>", "<cmd> KittyNavigateLeft <CR>", { desc = "Kitty window left" }
 map("n", "<C-l>", "<cmd> KittyNavigateRight <CR>", { desc = "Kitty window right" })
 map("n", "<C-j>", "<cmd> KittyNavigateDown <CR>", { desc = "Kitty window down" })
 map("n", "<C-k>", "<cmd> KittyNavigateUp <CR>", { desc = "Kitty window up" })
+
+map("n", "gcc", "nop") -- someone else bound gc
