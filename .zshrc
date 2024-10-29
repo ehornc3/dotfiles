@@ -119,3 +119,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/home/ethan/downloads/acl11.0express.64:$PATH"
