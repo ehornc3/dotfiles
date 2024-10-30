@@ -1,6 +1,11 @@
----@type NvPluginSpec[]
 return {
+  {
+    "stevearc/conform.nvim",
+    -- event = 'BufWritePre', -- uncomment for format on save
+    opts = require "configs.conform",
+  },
 
+  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -9,18 +14,13 @@ return {
   },
 
   {
-    "williamboman/mason.nvim",
-    opts = require "configs.mason",
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
-    opts = require "configs.treesitter",
-  },
-
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = require "configs.nvimtree",
+    opts = {
+      ensure_installed = {
+        "vim", "lua", "vimdoc",
+        "html", "css"
+      },
+    },
   },
 
   {
@@ -29,24 +29,9 @@ return {
   },
 
   {
-    "folke/which-key.nvim",
-    opts = require "configs.whichkey",
-  },
-
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-
-  {
     "mbbill/undotree",
     cmd = { "UndotreeToggle" },
-    config = function()
-      require "configs.undotree"
-    end,
+    opts = require "configs.undotree",
   },
 
   {
@@ -62,5 +47,13 @@ return {
       "KittyNavigateDown",
       "KittyNavigateUp",
     },
+
   },
+
+  {
+    "folke/which-key.nvim",
+    opts = require "configs.whichkey",
+    lazy = false,
+  }
+
 }

@@ -1,22 +1,23 @@
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+-- load defaults i.e lua_lsp
+require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "ts_ls", "rust_analyzer", "volar", "prismals" }
 
--- lsps with default config
+local servers = { "html", "cssls", "ts_ls", "rust_analyzer", "volar" }
+local nvlsp = require "nvchad.configs.lspconfig"
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
   }
 end
 
 lspconfig.clangd.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
   cmd = {
     "clangd",
     "--offset-encoding=utf-16",
@@ -24,9 +25,9 @@ lspconfig.clangd.setup {
 }
 
 lspconfig.pylsp.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  on_init = on_init,
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
   settings = {
     pylsp = {
       plugins = {
