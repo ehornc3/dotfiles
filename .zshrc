@@ -96,13 +96,9 @@ alias vim=nvim
 alias vi=nvim
 alias open=xdg-open
 
-alias rd='rm -r'
-
 eval "$(zoxide init zsh --cmd cd)"
 
 alias gdb="gdb -q -tui"
-
-cbonsai -p
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -119,4 +115,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="/home/ethan/downloads/acl11.0express.64:$PATH"
+alias neofetch=fastfetch
+fastfetch

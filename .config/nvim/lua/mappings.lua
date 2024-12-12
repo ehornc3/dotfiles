@@ -8,6 +8,8 @@ map("i", "jk", "<ESC>")
 map("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "Toggle undo tree" })
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
+map("n", "{", "{zzzv")
+map("n", "}", "}zzzv")
 map("n", "Q", "<nop>") -- Ex mode
 map("n", "<leader>pt", "<nop>") -- nvterm picker
 map("n", "<leader>n", "<nop>") -- toggle line numbers
@@ -22,3 +24,7 @@ map("n", "<C-j>", "<cmd> KittyNavigateDown <CR>", { desc = "Kitty window down" }
 map("n", "<C-k>", "<cmd> KittyNavigateUp <CR>", { desc = "Kitty window up" })
 
 map("n", "gcc", "nop") -- someone else bound gc
+
+map("n", "<F1>", "<nop>")
+map("i", "<F1>", "<nop>")
+map("v", "<F1>", "<nop>")
