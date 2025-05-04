@@ -69,7 +69,7 @@ ZSH_THEME="agnoster"
 # needs to be declared before plugins are loaded
 HISTFILE=~/.zsh_history
 
-plugins=(git zsh-autocomplete)
+plugins=(git zsh-autocomplete docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,4 +116,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 alias neofetch=fastfetch
-fastfetch
+# fastfetch
