@@ -69,7 +69,7 @@ ZSH_THEME="agnoster"
 # needs to be declared before plugins are loaded
 HISTFILE=~/.zsh_history
 
-plugins=(git zsh-autocomplete docker docker-compose)
+plugins=(git zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,28 +92,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias vim=nvim
-alias vi=nvim
 alias open=xdg-open
 
-eval "$(zoxide init zsh --cmd cd)"
-
-alias gdb="gdb -q -tui"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/ethan/.local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+if command -v nvim &> /dev/null; then
+  alias vim=nvim
+  alias vi=nvim
 else
-    if [ -f "/home/ethan/.local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/ethan/.local/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/ethan/.local/anaconda3/bin:$PATH"
-    fi
+  echo "not found: neovim"
 fi
-unset __conda_setup
-# <<< conda initialize <<<
 
-alias neofetch=fastfetch
-# fastfetch
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh --cmd cd)"
+else
+  echo "not found: zoxide"
+fi
+
+if command -v gdb &> /dev/null; then
+  alias gdb="gdb -q -tui"
+fi
+
+if command -v fastfetch &> /dev/null; then
+  alias neofetch=fastfetch
+fi
+
+if command -v bun &> /dev/null; then
+  # bun completions
+  [ -s "/home/ethan/.bun/_bun" ] && source "/home/ethan/.bun/_bun"
+
+  # bun
+  export BUN_INSTALL="$HOME/.bun"
+fi
+export PATH="$BUN_INSTALL/bin:$PATH"
